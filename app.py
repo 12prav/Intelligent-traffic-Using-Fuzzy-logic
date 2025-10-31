@@ -82,7 +82,8 @@ def fuzz_congestion(sim, dens, que, wt):
 st.set_page_config(page_title='Intelligent Traffic Signal Control', layout='wide')
 st.title('Intelligent Traffic Signal Control — Fuzzy + ML (MVP)')
 
-DATA_PATH = r"c:\Users\praveen jain\OneDrive\Desktop\ml project\traffic.csv"
+# Use a repository-relative data path so the app works on Heroku / CI runners
+DATA_PATH = os.path.join(os.path.dirname(__file__), 'traffic.csv')
 
 with st.sidebar:
     st.header('Model / Data')
